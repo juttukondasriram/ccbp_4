@@ -1,0 +1,23 @@
+const TransactionItem = props => {
+  const {transactionsItem, onDelete} = props
+  const {id, title, amount, type} = transactionsItem
+  const onDeleteButton = () => {
+    onDelete(id, type, amount)
+  }
+
+  return (
+    <li>
+      <p>{title}</p>
+      <p>{amount}</p>
+      <p>{type}</p>
+      <button type="button" data-testid="delete" onClick={onDeleteButton}>
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/money-manager/delete.png"
+          alt="delete"
+        />
+      </button>
+    </li>
+  )
+}
+
+export default TransactionItem
